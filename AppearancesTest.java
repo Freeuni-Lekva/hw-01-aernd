@@ -27,6 +27,21 @@ public class AppearancesTest extends TestCase {
 		assertEquals(2, Appearances.sameCount(a, Arrays.asList(1, 3, 3, 1)));
 		assertEquals(1, Appearances.sameCount(a, Arrays.asList(1, 3, 3, 1, 1)));
 	}
-	
+
+	public void testSameCount3() {
+		// basic List<Integer> cases
+		List<Integer> a = new ArrayList<>();
+		List<Integer> b = new ArrayList<>();
+		assertEquals(0, Appearances.sameCount(a,b));
+	}
+
+	public void testSameCount4() {
+		// basic List<Integer> cases
+		List<String> a = Arrays.asList("aaa","bb","c","dd","e");
+		assertEquals(0, Appearances.sameCount(a,Arrays.asList()));
+		assertEquals(2, Appearances.sameCount(a,Arrays.asList("aaa","bb")));
+		assertEquals(5, Appearances.sameCount(a,Arrays.asList("e","dd","c","bb","aaa")));
+
+	}
 	// Add more tests
 }
